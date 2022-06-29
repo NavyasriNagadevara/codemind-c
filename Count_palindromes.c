@@ -1,27 +1,26 @@
 #include<stdio.h>
 int main()
 {
-    int n,arr[100],i,j,temp,s=0,c=0,d;
+    int i,a[100],n,s,t,d,c=0;
     scanf("%d",&n);
     for(i=0;i<n;i++)
     {
-        scanf("%d",&arr[i]);
+        scanf("%d",&a[i]);
     }
     for(i=0;i<n;i++)
     {
-        temp=arr[i];
+        t=a[i];
         s=0;
-        while(arr[i]!=0)
+        while(t)
         {
-            d=arr[i]%10;
-            arr[i]=arr[i]/10;
+            d=t%10;
+            t=t/10;
             s=s*10+d;
         }
-        if(s==temp)
+        if(s==a[i])
         {
-            c++;
+           c++; 
         }
     }
     printf("%d",c);
-    return 0;
 }
