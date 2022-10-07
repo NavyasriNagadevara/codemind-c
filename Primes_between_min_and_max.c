@@ -1,0 +1,62 @@
+#include<stdio.h>
+int main()
+{
+    int n,i,min=999,max=0,k=0,x=0,temp=0,c=0,j,z=0;
+    scanf("%d",&n);
+    int arr[n];
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+        if(arr[i]<min)
+        {
+            min=arr[i];
+        }
+        if(arr[i]>max)
+        {
+            max=arr[i];
+        }
+    }
+    for(i=0;i<n;i++)
+    {
+        if(arr[i]==min)
+        {
+            k=i;
+            break;
+        }
+    }
+    for(i=0;i<n;i++)
+    {
+        if(arr[i]==max)
+        {
+            x=i;
+            break;
+        }
+    }
+    if(k>x)
+    {
+        temp=k;
+        k=x;
+        x=temp;
+    }
+    for(i=k;i<=x;i++)
+    {
+        c=0;
+        for(j=1;j<=arr[i];j++)
+        {
+            if(arr[i]%j==0)
+            {
+                c+=1;
+            }
+        }
+        if(c==2)
+        {
+            //printf("%d ",arr[i]);
+            z+=1;
+        }
+    }
+    printf("%d",z);
+    return 0;
+}
